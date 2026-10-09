@@ -1,70 +1,54 @@
-EUFORIA RESIDENCE — PRIMUL WEBSITE
-HTML + CSS + JavaScript, fără instalări, fără biblioteci externe.
+EUFORIA RESIDENCE — VERSIUNEA ANSAMBLU, 9 OCTOMBRIE 2026
 
-1. PORNIRE
-Dezarhivează Euforia-Website.zip (click dreapta > Extract All / Extragere totală).
-Deschide folderul Euforia-Website și dă dublu click pe index.html.
-Păstrează toate fișierele împreună. Nu deschide index.html direct din arhivă.
+DESCHIDERE
+Dezarhivează pachetul, apoi deschide Euforia-Website/index.html în Chrome.
+Toate resursele sunt locale; nu sunt necesare Node.js sau instalări.
+Editează index.html, style.css și script.js în Notepad++ (UTF-8).
 
-2. FIȘIERE
-index.html — textele, secțiunile și structura
-style.css — culorile, fonturile, spațierile și adaptarea pentru mobil
-script.js — meniul mobil, galeria și pregătirea mesajului
-images/ — cele patru fotografii reale, optimizate pentru web
+ACTUALIZĂRI
+- Logo Euforia cu fundal transparent, adaptat din imaginea furnizată.
+- Meniu fix, derulare lină și animații discrete; mod de mișcare redusă respectat.
+- Trei blocuri, cu stadiile confirmate de Alin la 9 octombrie 2026.
+- Vânzări și solicitări de ofertă exclusiv în Blocul 1.
+- Opt compartimentări cu planuri originale, sortare după suprafață și fereastră de mărire.
+- Solicitarea preselectează compartimentarea în formular.
+- Fotografii reale ale Blocului 1 și șantierului Blocului 3.
+- Apartamentul de prezentare și galerie interactivă.
+- Localizare: Strada Doamna Stanca nr. 46, Șelimbăr, Sibiu.
+- Link de căutare Google Maps după adresă (nu un reper GPS verificat).
+- Întrebări frecvente, WhatsApp, telefon și e-mail.
 
-3. EDITARE ÎN NOTEPAD++
-Click dreapta pe fișier > Edit with Notepad++.
-Salvează cu Ctrl+S și reîncarcă în Chrome cu Ctrl+R.
-Păstrează codarea UTF-8 pentru diacritice.
-Nu schimba extensiile în .txt.
-Pentru culori, modifică variabilele din începutul style.css.
-Textele vizibile se editează în index.html.
+CONTACT
+Telefon afișat: +40756851348
+WhatsApp: 40756851348
+E-mail: alin.mihai00@gmail.com
+Configurare în primele linii din script.js.
+Formularul deschide WhatsApp cu mesajul pregătit; vizitatorul confirmă trimiterea.
+Nu există trimitere automată sau bază de date a solicitărilor.
 
-4. CONTACT — CONFIGURAT
-În primele linii din script.js există:
-const CONTACT = {
-  whatsapp: "40756851348",
-  email: "alin.mihai00@gmail.com"
-};
+DATE
+Suprafețele și balcoanele sunt transcrise din planuri. Suprafața principală este
+numită „suprafață înscrisă în plan”, nu „suprafață utilă”, deoarece încadrarea
+magaziei trebuie confirmată în documentația apartamentului.
+Numerotarea din plan nu indică disponibilitate.
+Nu s-au inventat prețuri, avansuri, termene sau facilități.
+Pentru Blocul 2 nu a fost atribuită o fotografie separată neconfirmată.
+Materialele originale nu au fost modificate.
 
-Completează numărul WhatsApp în format internațional, numai cifre:
-40 + numărul românesc fără primul 0.
-Completează e-mailul dacă dorești deschiderea aplicației de e-mail.
-Dacă ambele sunt completate, WhatsApp are prioritate.
-Nu introduce chei API sau parole în aceste fișiere.
+PUBLICARE PE VERCEL
+Această arhivă nu actualizează singură site-ul public.
+Înlocuiește fișierele site-ului din proiectul/repository-ul conectat la Vercel:
+index.html, style.css, script.js și folderul images.
+Păstrează index.html la rădăcina publicată, nu într-un subfolder suplimentar.
+Păstrează configurația Vercel și legătura Git existente.
+După publicare, verifică site-ul pe desktop și telefon.
 
-Fără contact configurat, formularul permite doar pregătirea și copierea mesajului.
-Cu WhatsApp, vizitatorul verifică și trimite mesajul în WhatsApp.
-Cu e-mail, vizitatorul verifică și trimite din aplicația sa de e-mail, care trebuie configurată.
-Site-ul NU trimite automat, NU păstrează solicitări și NU are un server.
-Nu afișează confirmări false de trimitere.
-Pentru primirea directă a formularelor este necesar ulterior un serviciu de formulare sau un backend.
-Înainte de utilizare comercială, adaptează informațiile de confidențialitate la fluxul de contact ales.
+VERIFICARE
+Sintaxa JavaScript, referințele locale, ancorele și corespondența planurilor verificate.
+Verificarea vizuală într-un browser local nu a fost disponibilă în acest mediu.
 
-5. FOTOGRAFII
-Sunt fotografii furnizate anterior pentru Euforia Residence.
-Living: IMG_7526.jpeg
-Dormitor: IMG_7501.jpeg
-Detaliu: IMG_7503.jpeg
-Ambient: IMG_7502(1).jpeg
-Fișierele originale nu au fost modificate.
-Pentru înlocuire ușoară, păstrează numele din images/.
-Dacă schimbi subiectul fotografiei, actualizează și descrierea alt în HTML, respectiv legenda în script.js.
-
-6. CE INCLUDE
-Design crem Luxury Minimalist, în română.
-Meniu mobil, navigare între secțiuni.
-Galerie cu fereastră modală, butoane înainte/înapoi și control prin săgețile tastaturii.
-Escape închide galeria; navigarea cu Tab este disponibilă.
-Formular cu validare de bază și pregătire mesaj.
-Respectarea preferinței de mișcare redusă a utilizatorului.
-Resurse locale: pagina și fotografiile pot fi consultate fără internet.
-WhatsApp și e-mailul necesită serviciile respective.
-
-7. ÎNAINTE DE PUBLICARE / PORTOFOLIU
-Confirmă datele de contact, informațiile comerciale și dreptul de utilizare a materialelor.
-Nu am inclus prețuri, termene, suprafețe sau disponibilități neconfirmate.
-Numele este prezentat tipografic; nu este logo-ul oficial.
-Verifică pe telefonul tău și pe desktop.
-Pentru găzduire statică, publică fișierele din interiorul Euforia-Website, astfel încât index.html să fie la rădăcină.
-Această livrare este un pachet local; nu a fost publicată online.
+ULTIMA ACTUALIZARE
+Înlocuiește împreună index.html, style.css și script.js.
+Ansamblu: Doamna Stanca nr. 46. Birou: Doamna Stanca nr. 59, Bloc 1.
+Blocul 1: 70% finalizat. Meniu cu font actualizat și apariții la derulare.
+Stilurile și comportamentul sunt acum în fișierele CSS și JS separate.

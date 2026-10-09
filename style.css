@@ -5,3 +5,64 @@
 @media(max-width:900px){nav{gap:20px}.hero{grid-template-columns:48% 52%}.hero-copy{padding-top:25px}.hero-visual{min-height:520px}.hero h1{font-size:3.5rem}.section{padding:75px 6%}.story{gap:7%;grid-template-columns:43% 50%}.story-photo img{height:480px}.gallery-item img{height:290px}.contact{gap:6%}.benefits{gap:25px}footer p{display:none}}
 @media(max-width:680px){html{scroll-padding-top:20px}.header{height:90px;padding-inline:6%;position:relative}.brand>span{font-size:34px}.brand small{font-size:9px}.menu-toggle{display:flex;gap:15px;align-items:center;border:0;background:transparent;font-size:14px;padding:10px 0}nav{position:absolute;top:90px;left:0;right:0;background:var(--paper);padding:25px 6%;display:none;z-index:10;border-bottom:1px solid var(--line)}nav.open{display:flex;align-items:stretch;flex-direction:column;gap:20px}.nav-cta{text-align:center}.hero{display:flex;flex-direction:column;padding:30px 6% 25px}.hero-copy{padding:10px 0 30px}.eyebrow{font-size:11px;letter-spacing:1.6px;margin-bottom:23px}.hero h1{font-size:clamp(3rem,12vw,4.6rem)}.intro{font-size:16px;margin:24px 0}.hero-note{display:none}.hero-visual{min-height:330px}.vertical-label{display:none}.photo-label{padding:35px 16px 16px;font-size:9px}.intro-bar{display:block;margin-inline:6%;padding:20px 0}.intro-bar p{font-size:21px}.intro-bar a{display:inline-block;margin-top:8px}.section{padding:65px 6%}.story{display:flex;flex-direction:column-reverse;gap:35px;align-items:stretch}.story-photo img{height:440px}.story-copy h2{font-size:2.5rem}.section-heading{display:block}.section-heading>p{margin-top:20px}.gallery-grid{grid-template-columns:1fr 1fr;gap:22px 15px}.gallery-item.wide{grid-column:span 2}.gallery-item img{height:260px}.gallery-item.wide img{height:300px}.gallery-item:last-child{grid-column:span 1}.gallery-item:nth-child(2){grid-column:span 1}.gallery-item:nth-child(3){grid-column:span 2}.gallery-item:nth-child(3) img{height:300px}.gallery-item:last-child{grid-column:span 2}.benefits{grid-template-columns:1fr;gap:30px;margin-top:40px}.details{text-align:left}.contact{grid-template-columns:1fr;gap:40px}.form-row{grid-template-columns:1fr;gap:0}footer{padding:30px 6%;align-items:end}footer>small{max-width:140px;text-align:right}dialog{padding-inline:12px}dialog>img{height:65vh}h2{font-size:2.7rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Actualizare ansamblu, octombrie 2026 */
+.header{position:sticky;top:0;z-index:30;height:96px;background:rgba(246,243,236,.96);backdrop-filter:blur(16px);transition:box-shadow .25s;border-bottom:1px solid #d8d7cb99}
+.header.scrolled{box-shadow:0 5px 24px #20251b0a}.brand img{width:165px;height:76px;object-fit:contain}.header nav{gap:26px}
+nav a[aria-current="location"]{color:var(--accent);text-decoration:underline;text-underline-offset:8px}
+.hero-visual>img{object-position:center}.project-overview{display:grid;grid-template-columns:55% 1fr;gap:7%;align-items:center}.project-overview>img{height:390px}.project-overview h3,.visit-panel h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.2;margin:22px 0}.project-overview p,.visit-panel p{color:var(--muted)}.sale-tag{display:inline-block;font-size:11px;letter-spacing:1.2px;color:#5a613f;background:#e7e9dd;padding:7px 12px}.building-stages{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}.building-stages article{border-top:1px solid var(--line);padding-top:20px;position:relative}.stage-number{font-family:var(--serif);font-size:42px;color:#a7a998;display:block;margin-bottom:16px}.stage-label{font-size:12px;color:var(--muted)}.building-stages h3{font-family:var(--serif);font-size:30px;font-weight:400;margin:15px 0}.building-stages p{font-size:15px;color:var(--muted)}.building-stages small{font-size:12px;color:var(--muted)}.stage-track{height:3px;background:var(--line);margin:20px 0 8px}.stage-track span{display:block;height:100%;width:70%;background:var(--accent)}.construction-details{margin-top:25px;border-block:1px solid var(--line);padding:18px 0}.construction-details>div{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.construction-details img{height:300px}.apartments{background:#eeece4}.plan-toolbar{display:flex;justify-content:space-between;align-items:center;border-block:1px solid var(--line);margin-bottom:35px;padding:16px 0;gap:15px;font-size:14px}.plan-toolbar label{display:flex;align-items:center;gap:15px}.plan-toolbar select{width:auto;margin:0;font-size:14px;padding:8px}.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.plan-card{background:var(--paper);border:1px solid #deddd2;min-width:0}.plan-card-top{padding:18px 22px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:1.5px}.plan-image{border:0;background:white;width:100%;padding:20px;display:block;position:relative}.plan-image img{height:300px;object-fit:contain;transition:transform .4s}.plan-image:hover img{transform:scale(1.025)}.plan-image>span{display:block;text-align:right;font-size:12px;margin-top:10px;color:var(--muted)}.plan-info{padding:25px}.plan-info h3{font-family:var(--serif);font-size:29px;font-weight:400;display:flex;justify-content:space-between;gap:15px}.plan-info h3 span{color:var(--accent)}.plan-info p{font-size:13px;color:var(--muted);margin:12px 0}.plan-info .unit-numbers{font-size:12px;margin-bottom:22px}.plan-info .button{width:100%}.location{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center}.location address{font-style:normal;font-size:20px;line-height:1.6;margin:28px 0}.location>div>p:not(.eyebrow){color:var(--muted);margin-bottom:25px}.visit-panel{padding:40px;border:1px solid var(--line)}.faq{padding-top:10px}.faq h2{margin-bottom:35px}.faq details{padding:22px 0;border-top:1px solid var(--line)}summary{cursor:pointer;font-size:17px}details>p{color:var(--muted);margin-top:18px;max-width:850px}.faq details:last-child{border-bottom:1px solid var(--line)}
+#plan-dialog{background:var(--paper);color:var(--ink);padding:32px;width:1050px}#plan-dialog h2{font-size:32px;margin-bottom:20px}#plan-dialog .eyebrow{margin:0 0 12px}#plan-large{height:55vh;object-fit:contain;background:white}.close-plan{position:absolute;right:15px;top:10px;font-size:30px;border:0;background:transparent;width:44px;height:44px}.plan-dialog-note{font-size:12px;color:var(--muted);margin-top:15px}.plan-dialog-actions{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:20px}.plan-dialog-actions .text-link{margin:0}
+html{scroll-padding-top:125px}.reveal-pending{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}.reveal-visible{opacity:1;transform:none}
+@media(max-width:1050px){.header nav{gap:17px;font-size:13px}.nav-cta{padding:12px}.project-overview h3{font-size:28px}.plan-image img{height:250px}}
+@media(max-width:800px){.header nav{gap:12px}.brand img{width:135px}.project-overview{grid-template-columns:1fr;gap:28px}.project-overview>img{height:340px}.building-stages{gap:18px}.location{gap:35px}.visit-panel{padding:25px}.plan-info{padding:18px}.plan-info h3{font-size:24px}}
+@media(max-width:680px){.header{height:82px}.header nav{top:82px;gap:18px;font-size:16px}.brand img{width:135px;height:64px}.building-stages,.plans-grid,.location{grid-template-columns:1fr}.building-stages{gap:30px;margin-top:35px}.building-stages article{padding-top:15px}.stage-number{float:right;font-size:36px}.project-overview>img{height:280px}.construction-details>div{grid-template-columns:1fr}.construction-details img{height:auto}.plan-toolbar{align-items:start;flex-direction:column}.plan-toolbar label{width:100%;justify-content:space-between}.plan-toolbar select{max-width:65%}.plan-image img{height:270px}.plan-card-top{font-size:10px;padding:16px}.plan-info h3{font-size:29px}.location{gap:35px}.visit-panel{padding:25px}.faq{padding-top:15px}.hero-visual{min-height:380px}.hero-visual>img{object-position:center}.plan-dialog-actions{align-items:stretch;flex-direction:column}#plan-dialog{padding:55px 15px 20px}#plan-large{height:45vh}#plan-dialog h2{font-size:25px}html{scroll-padding-top:100px}}
+@media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1;transform:none;transition:none}}
+
+
+/* Meniu, adrese și apariții la derulare. */
+.header nav,.menu-toggle {
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .075em;
+}
+.header nav>a:not(.nav-cta) { position:relative; padding:10px 0; text-decoration:none; }
+.header nav>a:not(.nav-cta)::after {
+  content:""; position:absolute; bottom:4px; left:0; width:100%; height:1px;
+  background:var(--accent); transform:scaleX(0); transform-origin:left;
+  transition:transform .35s ease;
+}
+.header nav>a:hover::after,.header nav>a[aria-current="location"]::after {transform:scaleX(1)}
+.header .nav-cta {font-size:12px;letter-spacing:.04em}
+.address-label {font-size:12px;letter-spacing:.13em;margin:28px 0 8px!important}
+.location address {margin:14px 0 25px}
+.contact-location address {font-style:normal;font-size:14px;color:var(--muted);margin-top:8px}
+.contact-location p {font-size:25px}
+html {scroll-padding-top:120px}
+/* Toate blocurile intră progresiv în cadru, nu doar titlurile. */
+.motion-ready :is(.hero-copy,.hero-visual,.intro-bar,.section-heading,.project-overview,.building-stages article,.plan-toolbar,.plan-card,.gallery-item,.gallery-disclaimer,.construction-details,.location>div,.faq>h2,.faq>details,.contact>div,.contact form,footer) {
+  opacity:0;
+  transform:translate3d(0,48px,0);
+  transition:opacity 1.05s cubic-bezier(.22,1,.36,1),
+             transform 1.05s cubic-bezier(.22,1,.36,1);
+  transition-delay:var(--enter-delay,0ms);
+}
+.motion-ready .in-view {
+  opacity:1!important;
+  transform:translate3d(0,0,0)!important;
+}
+.motion-ready .stage-track span {transform:scaleX(0);transform-origin:left;transition:transform 1.5s ease .25s}
+.motion-ready .in-view .stage-track span {transform:scaleX(1)}
+.motion-ready :is(.hero-copy,.hero-visual,.intro-bar,.section-heading,.project-overview,.building-stages article,.plan-toolbar,.plan-card,.gallery-item,.gallery-disclaimer,.construction-details,.location>div,.faq>h2,.faq>details,.contact>div,.contact form,footer):focus-within {opacity:1;transform:none}
+@media(max-width:1050px){.header nav{font-size:12px;gap:15px;letter-spacing:.025em}}
+@media(max-width:680px){
+  .header nav{font-size:16px;letter-spacing:.045em;gap:17px}
+  .header .nav-cta{font-size:14px}
+  html{scroll-padding-top:105px}
+  .motion-ready :is(.hero-copy,.hero-visual,.intro-bar,.section-heading,.project-overview,.building-stages article,.plan-toolbar,.plan-card,.gallery-item,.gallery-disclaimer,.construction-details,.location>div,.faq>h2,.faq>details,.contact>div,.contact form,footer){transform:translate3d(0,30px,0);transition-duration:.85s;transition-delay:0ms}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .motion-ready :is(.hero-copy,.hero-visual,.intro-bar,.section-heading,.project-overview,.building-stages article,.plan-toolbar,.plan-card,.gallery-item,.gallery-disclaimer,.construction-details,.location>div,.faq>h2,.faq>details,.contact>div,.contact form,footer){opacity:1;transform:none;transition:none}
+  .motion-ready .stage-track span{transform:none;transition:none}
+}

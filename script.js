@@ -80,7 +80,7 @@ form.addEventListener("submit", e => {
   if (!name || !/[0-9]{3}/.test(tel.replace(/[\s()+.-]/g, ""))) {
     status.textContent = "Completează numele și un număr de telefon valid."; return;
   }
-  const message = "Bună ziua! Sunt " + name + ".\nTelefon: " + tel + "\nInteres: " + data.get("interest") + "\n" + String(data.get("message")).trim() + "\nAș dori mai multe informații despre Euforia Residence.";
+  const message = "Bună ziua! Sunt " + name + ".\nTelefon: " + tel + "\nInteres: " + data.get("interest") + "\n" + String(data.get("message")).trim() + "\nAș dori oferta pentru Blocul 1, Euforia Residence.";
   document.querySelector("#prepared-message").value = message;
   document.querySelector("#message-output").hidden = false;
   if (hasWhatsapp) {
@@ -102,3 +102,84 @@ document.querySelector("#copy-message").addEventListener("click", async () => {
     status.textContent = "Text selectat. Apasă Ctrl+C (sau Copiază pe telefon). Mesajul nu a fost trimis.";
   }
 });
+
+
+// Schițe și solicitări: întotdeauna Blocul 1.
+const planDialog = document.querySelector("#plan-dialog");
+const planCards = Array.from(document.querySelectorAll(".plan-card"));
+let selectedType = "";
+function selectApartment(type) {
+  if (planDialog.open) planDialog.close();
+  document.querySelector('[name="interest"]').value = type;
+  document.querySelector("#contact").scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  document.querySelector('[name="name"]').focus({preventScroll:true});
+}
+document.querySelectorAll(".select-plan").forEach(button => button.addEventListener("click", () => selectApartment(button.dataset.type)));
+document.querySelectorAll("[data-plan]").forEach(button => button.addEventListener("click", () => {
+  const card = button.closest(".plan-card");
+  selectedType = card.querySelector(".select-plan").dataset.type;
+  document.querySelector("#plan-title").textContent = selectedType;
+  const src = button.querySelector("img").getAttribute("src");
+  const img = document.querySelector("#plan-large"); img.src = src; img.alt = "Schiță " + selectedType;
+  document.querySelector("#original-plan").href = src;
+  planDialog.showModal(); document.body.style.overflow = "hidden";
+}));
+document.querySelector(".close-plan").addEventListener("click", () => planDialog.close());
+planDialog.addEventListener("close", () => { document.body.style.overflow = ""; });
+document.querySelector("#plan-offer").addEventListener("click", () => selectApartment(selectedType));
+document.querySelector("#plan-sort").addEventListener("change", event => {
+  const sorted = [...planCards];
+  if (event.target.value !== "type") sorted.sort((a,b) => (Number(a.dataset.area)-Number(b.dataset.area)) * (event.target.value === "asc" ? 1 : -1));
+  document.querySelector(".plans-grid").append(...sorted);
+});
+
+// Derulare nativă lină, meniu fix și apariții discrete.
+// Conținutul rămâne vizibil dacă JavaScript sau IntersectionObserver nu sunt disponibile.
+const header = document.querySelector(".header");
+window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 20), {passive:true});
+if ("IntersectionObserver" in window) {
+  const navLinks = Array.from(navigation.querySelectorAll('a[href^="#"]'));
+  const sectionObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        if (link.hash === "#" + entry.target.id) link.setAttribute("aria-current","location");
+        else link.removeAttribute("aria-current");
+      });
+    }
+  }, {rootMargin:"-15% 0px -55% 0px", threshold:0});
+  document.querySelectorAll("main section[id]").forEach(section => sectionObserver.observe(section));
+}
+
+// Apariții progresive pentru conținut, cu accesibilitate și revenire sigură.
+
+function initializeMotion(){
+  const root=document.documentElement;
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  try {
+    const items=document.querySelectorAll(".hero-copy,.hero-visual,.intro-bar,.section-heading,.project-overview,.building-stages article,.plan-toolbar,.plan-card,.gallery-item,.gallery-disclaimer,.construction-details,.location>div,.faq>h2,.faq>details,.contact>div,.contact form,footer");
+    document.querySelectorAll(".building-stages article").forEach(function(el,i){
+      el.style.setProperty("--enter-delay",(i*100)+"ms");
+    });
+    document.querySelectorAll(".plan-card,.gallery-item").forEach(function(el,i){
+      el.style.setProperty("--enter-delay",((i%2)*110)+"ms");
+    });
+    const observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("in-view");
+        }else if(entry.boundingClientRect.top>window.innerHeight){
+          // Reapare delicat când revii spre un element aflat mai jos.
+          entry.target.classList.remove("in-view");
+        }
+      });
+    },{threshold:0.06,rootMargin:"0px 0px -35px 0px"});
+    root.classList.add("motion-ready");
+    items.forEach(function(item){observer.observe(item)});
+    window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",function(e){
+      if(e.matches){root.classList.remove("motion-ready");observer.disconnect()}
+    });
+  }catch(error){
+    root.classList.remove("motion-ready");
+  }
+}
+initializeMotion();
