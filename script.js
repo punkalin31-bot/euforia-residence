@@ -30,16 +30,46 @@ const photos = [
 ];
 const lightbox = document.querySelector("#lightbox");
 let current = 0;
+let activePhotos = photos;
 function showPhoto(index) {
-  current = (index + photos.length) % photos.length;
+  current = (index + activePhotos.length) % activePhotos.length;
   const img = document.querySelector("#lightbox-image");
-  img.src = photos[current].src;
-  img.alt = photos[current].caption;
-  document.querySelector("#lightbox-caption").textContent = (current + 1) + " / " + photos.length + " — " + photos[current].caption;
+  img.src = activePhotos[current].src;
+  img.alt = activePhotos[current].caption;
+  document.querySelector("#lightbox-caption").textContent = (current + 1) + " / " + activePhotos.length + " — " + activePhotos[current].caption;
+  document.querySelector("#previous").hidden = activePhotos.length < 2;
+  document.querySelector("#next").hidden = activePhotos.length < 2;
+}
+function openPhotos(items, index) {
+  activePhotos = items; showPhoto(index);
+  lightbox.showModal(); document.body.style.overflow = "hidden";
 }
 document.querySelectorAll("[data-image]").forEach(button => {
-  button.addEventListener("click", () => { showPhoto(Number(button.dataset.image)); lightbox.showModal(); });
+  button.addEventListener("click", () => openPhotos(photos, Number(button.dataset.image)));
 });
+// Fiecare bloc are propria galerie, fără navigare către altă pagină.
+document.querySelectorAll(".building-gallery").forEach(gallery => {
+  const buttons = Array.from(gallery.querySelectorAll(".building-photo"));
+  const items = buttons.map(button => {
+    const img = button.querySelector("img");
+    return { src: img.getAttribute("src"), caption: img.alt };
+  });
+  buttons.forEach((button, index) => button.addEventListener("click", () => openPhotos(items, index)));
+});
+// Swipe orizontal pe imagine, păstrând posibilitatea de zoom cu două degete.
+let swipeStart = null;
+const lightboxImage = document.querySelector("#lightbox-image");
+lightboxImage.addEventListener("touchstart", event => {
+  swipeStart = event.touches.length === 1 ? {x:event.touches[0].clientX,y:event.touches[0].clientY} : null;
+}, {passive:true});
+lightboxImage.addEventListener("touchend", event => {
+  if (!swipeStart || !event.changedTouches.length) return;
+  const dx = event.changedTouches[0].clientX - swipeStart.x;
+  const dy = event.changedTouches[0].clientY - swipeStart.y;
+  swipeStart = null;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3) showPhoto(current + (dx < 0 ? 1 : -1));
+}, {passive:true});
+lightboxImage.addEventListener("touchcancel", () => {swipeStart = null;}, {passive:true});
 document.querySelector(".close-lightbox").addEventListener("click", () => lightbox.close());
 document.querySelector("#previous").addEventListener("click", () => showPhoto(current - 1));
 document.querySelector("#next").addEventListener("click", () => showPhoto(current + 1));
@@ -135,8 +165,8 @@ document.querySelector("#plan-sort").addEventListener("change", event => {
 });
 
 
-// Procente confirmate: înlocuiește null cu un număr de la 0 la 100 când ai datele.
-const BUILDING_PROGRESS = { 1: 70, 2: null, 3: null };
+// Procente confirmate la 13 octombrie 2026. Valori permise: 0–100.
+const BUILDING_PROGRESS = { 1: 70, 2: 35, 3: 10 };
 Object.entries(BUILDING_PROGRESS).forEach(([number, value]) => {
   if (typeof value !== "number" || !Number.isFinite(value) || value < 0 || value > 100) return;
   const card = document.querySelector('[data-building="' + number + '"]');

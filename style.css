@@ -142,3 +142,21 @@ body{max-width:none}
 .building-gallery img{height:155px}
 }
 @media(prefers-reduced-motion:reduce){.motion-ready .in-view .stage-unconfirmed span{animation:none}}
+
+/* Butoane rotunjite și galerii în pagina curentă */
+.button,.hero-actions .button,.nav-cta{border-radius:999px;padding-inline:28px}
+.menu-toggle{border-radius:999px}
+.building-photos summary{border:1px solid var(--line);border-radius:28px;padding:13px 18px;margin:14px 0;transition:background .2s}
+.building-photos summary:hover{background:#eae6da}
+.building-photos{border:0}
+.building-gallery .building-photo{padding:0;border:0;background:transparent;overflow:hidden;border-radius:12px;display:block;width:100%}
+.building-gallery .building-photo:hover img{transform:scale(1.04)}
+#direct-contact{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 26px;border:1px solid #176a49;border-radius:999px;background:#176a49;color:#fff;font-size:14px;font-weight:600;box-shadow:0 6px 18px #176a4920;transition:background .2s,transform .2s}
+#direct-contact:hover{background:#105236;transform:translateY(-2px)}
+.copy-button{border:1px solid var(--accent);border-radius:999px;padding:10px 18px}
+#lightbox{width:min(960px,94vw);max-height:90svh;border-radius:18px;padding:55px 20px 15px;box-shadow:0 24px 90px #0006}
+#lightbox-image{height:auto;max-height:69svh;object-fit:contain;touch-action:pan-y pinch-zoom;user-select:none}
+#lightbox::backdrop{background:#10150fd9;backdrop-filter:blur(5px)}
+.close-lightbox,.close-plan,.lightbox-bar button{border-radius:50%;background:#ffffff15;border:1px solid #ffffff30;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0}
+.lightbox-bar{padding-top:14px}.lightbox-bar button{min-width:44px;flex-shrink:0}.lightbox-bar p{font-size:12px}
+@media(max-width:680px){#lightbox{padding:55px 12px 12px;width:94vw}#lightbox-image{max-height:65svh}.hero-actions .button{border-radius:999px}#direct-contact{width:100%;max-width:340px}.building-photos summary{font-size:13px}}

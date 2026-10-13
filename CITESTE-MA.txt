@@ -60,10 +60,17 @@ Scriptul existent este compatibil; pachetul include toate fișierele.
 
 GALERII PE BLOC ȘI PROGRES
 Fiecare bloc are butonul său de fotografii. Blocul 2 afișează „Fotografii în curând”.
-În script.js, BUILDING_PROGRESS conține 70, null, null. Înlocuiește null cu procentele confirmate.
+În script.js, BUILDING_PROGRESS conține 70, 35, 10, confirmate la 13 octombrie 2026.
 În index.html, fiecare articol data-building conține building-gallery: aici adaugi imaginile blocului respectiv.
 Exemplu de fotografie de adăugat în building-gallery (înlocuiește numele fișierului):
-<a href="images/bloc-2-nou.jpg" target="_blank" rel="noopener"><img src="images/bloc-2-nou.jpg" alt="Blocul 2 — stadiul lucrărilor" loading="lazy"></a>
+<button type="button" class="building-photo" aria-label="Mărește fotografia Blocului 2"><img src="images/bloc-2-nou.jpg" alt="Blocul 2 — stadiul lucrărilor" loading="lazy"></button>
 După adăugarea primei fotografii la Blocul 2, șterge paragraful building-empty.
 Fotografia nouă de interior este images/living-colt.png.
 Înlocuiește împreună index.html, style.css, script.js și adaugă imaginea nouă.
+
+Galeriile Blocurilor 1 și 2 sunt pentru exterior. La Blocul 2 se așteaptă fotografiile.
+
+ACTUALIZARE BUTOANE ȘI GALERII
+Fotografiile blocurilor se deschid în pagină, cu săgeți, tastatură, Escape și swipe.
+Pentru fotografii noi, folosește butoane building-photo în building-gallery, ca în exemplul de mai sus.
+Butoane rotunjite, WhatsApp verde și fără săgeata diagonală în hero.
