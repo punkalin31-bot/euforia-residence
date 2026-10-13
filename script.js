@@ -25,7 +25,8 @@ const photos = [
   { src: "images/living.jpg", caption: "Living & bucătărie" },
   { src: "images/dormitor.jpg", caption: "Dormitor în tonuri naturale" },
   { src: "images/detaliu.jpg", caption: "Detalii & texturi" },
-  { src: "images/ambient.jpg", caption: "Confort, în fiecare detaliu" }
+  { src: "images/ambient.jpg", caption: "Confort, în fiecare detaliu" },
+  { src: "images/living-colt.png", caption: "Colț de living" }
 ];
 const lightbox = document.querySelector("#lightbox");
 let current = 0;
@@ -131,6 +132,21 @@ document.querySelector("#plan-sort").addEventListener("change", event => {
   const sorted = [...planCards];
   if (event.target.value !== "type") sorted.sort((a,b) => (Number(a.dataset.area)-Number(b.dataset.area)) * (event.target.value === "asc" ? 1 : -1));
   document.querySelector(".plans-grid").append(...sorted);
+});
+
+
+// Procente confirmate: înlocuiește null cu un număr de la 0 la 100 când ai datele.
+const BUILDING_PROGRESS = { 1: 70, 2: null, 3: null };
+Object.entries(BUILDING_PROGRESS).forEach(([number, value]) => {
+  if (typeof value !== "number" || !Number.isFinite(value) || value < 0 || value > 100) return;
+  const card = document.querySelector('[data-building="' + number + '"]');
+  const track = card.querySelector(".stage-track");
+  track.classList.remove("stage-unconfirmed"); track.removeAttribute("aria-hidden");
+  track.setAttribute("role", "progressbar"); track.setAttribute("aria-label", "Blocul " + number + " — progres");
+  track.setAttribute("aria-valuemin", "0"); track.setAttribute("aria-valuemax", "100"); track.setAttribute("aria-valuenow", String(value));
+  track.querySelector("span").style.width = value + "%";
+  card.querySelector(".building-progress-label").textContent = value + "% finalizat";
+  const pending = card.querySelector(".progress-pending"); if (pending) pending.hidden = true;
 });
 
 // Derulare nativă lină, meniu fix și apariții discrete.

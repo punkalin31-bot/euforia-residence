@@ -57,3 +57,13 @@ HERO — 13 OCTOMBRIE 2026
 Fotografie pe toată lățimea, text suprapus, două butoane și încadrare pentru mobil.
 Înlocuiește index.html și style.css și adaugă images/hero-euforia.png.
 Scriptul existent este compatibil; pachetul include toate fișierele.
+
+GALERII PE BLOC ȘI PROGRES
+Fiecare bloc are butonul său de fotografii. Blocul 2 afișează „Fotografii în curând”.
+În script.js, BUILDING_PROGRESS conține 70, null, null. Înlocuiește null cu procentele confirmate.
+În index.html, fiecare articol data-building conține building-gallery: aici adaugi imaginile blocului respectiv.
+Exemplu de fotografie de adăugat în building-gallery (înlocuiește numele fișierului):
+<a href="images/bloc-2-nou.jpg" target="_blank" rel="noopener"><img src="images/bloc-2-nou.jpg" alt="Blocul 2 — stadiul lucrărilor" loading="lazy"></a>
+După adăugarea primei fotografii la Blocul 2, șterge paragraful building-empty.
+Fotografia nouă de interior este images/living-colt.png.
+Înlocuiește împreună index.html, style.css, script.js și adaugă imaginea nouă.
