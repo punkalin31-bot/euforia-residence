@@ -52,3 +52,8 @@ ULTIMA ACTUALIZARE
 Ansamblu: Doamna Stanca nr. 46. Birou: Doamna Stanca nr. 59, Bloc 1.
 Blocul 1: 70% finalizat. Meniu cu font actualizat și apariții la derulare.
 Stilurile și comportamentul sunt acum în fișierele CSS și JS separate.
+
+HERO — 13 OCTOMBRIE 2026
+Fotografie pe toată lățimea, text suprapus, două butoane și încadrare pentru mobil.
+Înlocuiește index.html și style.css și adaugă images/hero-euforia.png.
+Scriptul existent este compatibil; pachetul include toate fișierele.

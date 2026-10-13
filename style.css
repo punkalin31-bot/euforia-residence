@@ -66,3 +66,39 @@ html {scroll-padding-top:120px}
   .motion-ready :is(.hero-copy,.hero-visual,.intro-bar,.section-heading,.project-overview,.building-stages article,.plan-toolbar,.plan-card,.gallery-item,.gallery-disclaimer,.construction-details,.location>div,.faq>h2,.faq>details,.contact>div,.contact form,footer){opacity:1;transform:none;transition:none}
   .motion-ready .stage-track span{transform:none;transition:none}
 }
+
+/* Hero panoramic — 13 octombrie 2026 */
+body{max-width:none}
+.hero.hero-immersive{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;min-height:660px;min-height:max(660px,calc(100svh - 96px));padding:100px 8% 135px;overflow:hidden;background:#232b2b;color:#fff}
+.hero-immersive .hero-backdrop{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:center 47%}
+.hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(13,24,27,.79) 0%,rgba(13,24,27,.59) 38%,rgba(13,24,27,.19) 76%),linear-gradient(0deg,rgba(9,18,19,.64),transparent 45%)}
+.hero-immersive .hero-copy{width:100%;max-width:850px;padding:0;z-index:1}
+.hero-immersive .eyebrow{color:#f1e5d1;font-size:11px;letter-spacing:.23em;margin-bottom:30px}
+.hero-immersive .eyebrow>span{background:#d9c49f;width:34px}
+.hero-immersive h1{font-size:clamp(64px,6.5vw,108px);line-height:1.03;letter-spacing:-.055em;text-shadow:0 2px 30px #0002}
+.hero-immersive h1 em{color:#e7d5b5}
+.hero-immersive .intro{color:#f1efea;font-size:clamp(16px,1.3vw,20px);line-height:1.65;max-width:570px;margin:30px 0 34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-actions .button{padding:17px 26px;min-height:58px;display:inline-flex;align-items:center;justify-content:center;gap:24px;font-size:13px;font-weight:500;border-radius:3px;transition:background .25s,transform .25s,border-color .25s}
+.hero-actions .hero-primary{background:#e7d5b5;border-color:#e7d5b5;color:#252a26}
+.hero-actions .hero-primary:hover{background:#f5e9d5;border-color:#f5e9d5;transform:translateY(-2px)}
+.hero-actions .hero-secondary{background:#15202235;border-color:#ffffff8c;color:white;backdrop-filter:blur(5px)}
+.hero-actions .hero-secondary:hover{background:#ffffff20;border-color:white;transform:translateY(-2px)}
+.hero-immersive a:focus-visible{outline-color:#fff}
+.hero-bottom{position:absolute;bottom:32px;left:8%;right:8%;border-top:1px solid #ffffff40;padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#eeeae2;font-size:10px;letter-spacing:.16em}
+.hero-bottom a{font-size:12px;letter-spacing:.04em;display:flex;align-items:center;gap:18px;padding:6px 0}
+.hero-bottom a span{font-size:20px}.hero-status-dot{display:inline-block;width:6px;height:6px;background:#dcccab;border-radius:50%;margin-right:10px;vertical-align:middle}
+@media(min-width:1800px){.hero.hero-immersive{padding-left:max(8%,calc((100vw - 1512px)/2))}}
+@media(max-width:900px){.hero.hero-immersive{padding-inline:6%}.hero-bottom{left:6%;right:6%}.hero-bottom .hero-address{display:none}.hero-immersive .hero-backdrop{object-position:58% center}}
+@media(max-width:680px){
+.hero.hero-immersive{min-height:max(690px,calc(100svh - 82px));padding:80px 6% 120px;justify-content:center}
+.hero-immersive .hero-backdrop{object-position:57% center}
+.hero-shade{background:linear-gradient(90deg,#0d181bcc,#0d181b55),linear-gradient(0deg,#091213b8,transparent 85%)}
+.hero-immersive .hero-copy{padding:0}.hero-immersive .eyebrow{font-size:9px;letter-spacing:.15em;margin-bottom:25px}
+.hero-immersive h1{font-size:clamp(52px,12.4vw,78px);line-height:1.06}
+.hero-immersive .intro{font-size:15px;margin:26px 0 28px;max-width:340px}
+.hero-actions{gap:12px;flex-direction:column;align-items:stretch;max-width:340px}
+.hero-actions .button{min-height:54px;padding:14px 18px;font-size:13px}
+.hero-bottom{bottom:23px;padding-top:18px;gap:12px;font-size:8px;letter-spacing:.08em}
+.hero-bottom a{font-size:10px;gap:8px}
+}
