@@ -111,7 +111,7 @@ form.addEventListener("submit", e => {
   if (!name || !/[0-9]{3}/.test(tel.replace(/[\s()+.-]/g, ""))) {
     status.textContent = "Completează numele și un număr de telefon valid."; return;
   }
-  const message = "Bună ziua! Sunt " + name + ".\nTelefon: " + tel + "\nInteres: " + data.get("interest") + "\n" + String(data.get("message")).trim() + "\nAș dori oferta pentru Blocul 1, Euforia Residence.";
+  const message = "Bună ziua! Sunt " + name + ".\nTelefon: " + tel + "\nInteres: " + data.get("interest") + "\n" + String(data.get("message")).trim() + "\nAș dori oferta pentru Blocul 2, Euforia Residence.";
   document.querySelector("#prepared-message").value = message;
   document.querySelector("#message-output").hidden = false;
   if (hasWhatsapp) {
@@ -135,7 +135,7 @@ document.querySelector("#copy-message").addEventListener("click", async () => {
 });
 
 
-// Schițe și solicitări: întotdeauna Blocul 1.
+// Schițe și solicitări: întotdeauna Blocul 2.
 const planDialog = document.querySelector("#plan-dialog");
 const planCards = Array.from(document.querySelectorAll(".plan-card"));
 let selectedType = "";
@@ -166,7 +166,7 @@ document.querySelector("#plan-sort").addEventListener("change", event => {
 
 
 // Procente confirmate la 13 octombrie 2026. Valori permise: 0–100.
-const BUILDING_PROGRESS = { 1: 70, 2: 35, 3: 10 };
+const BUILDING_PROGRESS = { 1: 100, 2: 70, 3: 35, 4: 10 };
 Object.entries(BUILDING_PROGRESS).forEach(([number, value]) => {
   if (typeof value !== "number" || !Number.isFinite(value) || value < 0 || value > 100) return;
   const card = document.querySelector('[data-building="' + number + '"]');
@@ -229,3 +229,11 @@ function initializeMotion(){
   }
 }
 initializeMotion();
+
+// Coperțile deschid aceeași galerie ca miniaturile, fără navigare externă.
+document.querySelectorAll('[data-open-building]').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('[data-building]');
+    card.querySelector('.building-photo')?.click();
+  });
+});

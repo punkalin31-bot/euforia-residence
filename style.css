@@ -160,3 +160,33 @@ body{max-width:none}
 .close-lightbox,.close-plan,.lightbox-bar button{border-radius:50%;background:#ffffff15;border:1px solid #ffffff30;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0}
 .lightbox-bar{padding-top:14px}.lightbox-bar button{min-width:44px;flex-shrink:0}.lightbox-bar p{font-size:12px}
 @media(max-width:680px){#lightbox{padding:55px 12px 12px;width:94vw}#lightbox-image{max-height:65svh}.hero-actions .button{border-radius:999px}#direct-contact{width:100%;max-width:340px}.building-photos summary{font-size:13px}}
+
+/* Patru blocuri: coperți fotografice și galerii independente. */
+.building-stages{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+.building-stages .building-card{padding:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#faf8f2;min-width:0}
+.building-stages .building-card-sale{border-color:#9c8b67;box-shadow:0 8px 35px #66532e0b}
+.building-cover{display:block;position:relative;padding:0;border:0;width:100%;overflow:hidden;background:#deddd2;cursor:pointer}
+.building-cover img{display:block;width:100%;height:320px;object-fit:cover;transition:transform .6s}
+.building-cover:hover img{transform:scale(1.035)}
+.building-cover>span{position:absolute;bottom:18px;right:18px;background:#f6f3ecf2;color:#2c3028;border-radius:99px;padding:9px 16px;font-size:12px;display:flex;gap:18px;align-items:center}
+.building-cover b{font-size:20px;font-weight:400}
+.building-card-body{padding:26px 28px 24px}
+.building-card-heading{display:flex;align-items:center;justify-content:space-between;min-height:34px;gap:12px}
+.building-card-heading .stage-number{float:none;margin:0;font-size:30px;line-height:1}
+.building-card-heading .stage-label{letter-spacing:.8px;text-transform:uppercase;font-size:11px}
+.building-stages h3{margin:12px 0;font-size:36px}
+.building-stages .building-description{min-height:72px;margin-bottom:18px}
+.building-stages .building-progress{min-height:0;padding:0;margin:0 0 18px}
+.building-stages .stage-track{height:5px;border-radius:9px;overflow:hidden}
+.building-stages .stage-track span{border-radius:9px}
+.building-stages .building-progress-label{font-size:13px;color:#5b624d}
+.building-stages .building-photos{margin:0}
+.building-stages .building-photos summary{margin:12px 0 0}
+.building-stages .building-gallery{margin-top:18px;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.building-stages .building-gallery img{height:120px;width:100%;object-fit:cover}
+.building-gallery-note{font-size:12px!important;line-height:1.6;margin:14px 0 0}
+.building-offer{width:100%;margin-top:12px}
+.building-cover:focus-visible,.building-photo:focus-visible{outline:3px solid var(--accent);outline-offset:-4px}
+@media(max-width:800px){.building-card-body{padding:22px}.building-cover img{height:280px}.building-stages .building-description{min-height:100px}.building-stages .building-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.building-stages{grid-template-columns:1fr;gap:24px}.building-stages .building-description{min-height:0}.building-cover img{height:300px}.building-card-body{padding:22px 20px}.building-stages .building-gallery img{height:150px}}
+@media(prefers-reduced-motion:reduce){.building-cover img{transition:none}}
